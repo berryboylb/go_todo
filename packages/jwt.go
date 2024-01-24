@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/golang-jwt/jwt"
-	"github.com/joho/godotenv"
+	// "github.com/joho/godotenv"
 	"log"
 	"net/http"
 	"os"
@@ -16,11 +16,11 @@ import (
 var SecretKey []byte
 
 func init() {
-	err := godotenv.Load()
-	if err != nil {
-		fmt.Println(err)
-		// log.Fatal("Error loading .env file")
-	}
+	// err := godotenv.Load()
+	// if err != nil {
+	// 	fmt.Println(err)
+	// 	// log.Fatal("Error loading .env file")
+	// }
 
 	secretKey := os.Getenv("SECRET_KEY")
 	if secretKey == "" {

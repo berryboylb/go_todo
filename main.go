@@ -4,21 +4,21 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"fmt"
+	// "fmt"
 
 	"github.com/gorilla/mux" // An HTTP router
-	"github.com/joho/godotenv"
+	// "github.com/joho/godotenv"
 	_ "github.com/lib/pq" // Postgres driver for database/sql, _ indicates it won't be referenced directly in code
 	"github.com/rs/cors"  // For handling CORS (to be explained)
 	"webapp/packages"     // importing files from the packages directory, to be explained
 )
 
 func main() {
-	err := godotenv.Load()
-	if err != nil {
-		fmt.Println(err)
-		// log.Println("Error loading .env file")
-	}
+	// err := godotenv.Load()
+	// if err != nil {
+	// 	fmt.Println(err)
+	// 	// log.Println("Error loading .env file")
+	// }
 
 	r := mux.NewRouter()
 	r.Handle("/", webapp.Hello).Methods("GET")
