@@ -43,7 +43,7 @@ func main() {
 	// if deployed, looks for port in the environment and runs on it. Otherwise, runs locally on port 8000
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "8000"
+		port = "3000"
 	}
 
 	// apply the CORS specification on the request, and add relevant CORS headers as necessary
