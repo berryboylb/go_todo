@@ -96,7 +96,7 @@ func OpenConnection() (*sql.DB, string) {
 
 	// connecting to database
 	// 1. creating the connection string
-	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, dbPort, user, password, dbname)
+	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=require", host, dbPort, user, password, dbname)
 
 	// 2. validates the arguments provided, doesn't create connection to database
 	db, err := sql.Open("postgres", psqlInfo)
