@@ -546,3 +546,6 @@ var DoneTask = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 
 	CreateResponse(w, r, "Successfully updated task status", http.StatusOK, updatedTask)
 })
+var Hello = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+	CreateResponse(w, r, "Server Active", http.StatusOK, true)
+})

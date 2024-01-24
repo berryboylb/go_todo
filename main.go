@@ -19,6 +19,7 @@ func main() {
 	}
 
 	r := mux.NewRouter()
+	r.Handle("/", webapp.Hello).Methods("GET")
 	r.Handle("/user", webapp.CreateUser).Methods("POST")
 	r.Handle("/login", webapp.LoginUser).Methods("POST")
 	r.Handle("/user", webapp.JWTAuthMiddleware(webapp.UpdateUser)).Methods("PATCH")
