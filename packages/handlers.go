@@ -16,7 +16,7 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"     // An HTTP router
-	"github.com/joho/godotenv"   // For getting the env variables
+	//"github.com/joho/godotenv"   // For getting the env variables
 	_ "github.com/lib/pq"        // Postgres driver for database/sql, _ indicates it won't be referenced directly in code
 	"golang.org/x/crypto/bcrypt" // for hashing passwords
 )
@@ -62,10 +62,10 @@ type UserUpdate struct {
 func OpenConnection() (*sql.DB, string) {
 	// Getting constants from .env
 	var userId string = ""
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
+	// err := godotenv.Load()
+	// if err != nil {
+	// 	log.Fatal("Error loading .env file")
+	// }
 
 	user := os.Getenv("USER")
 	if user == "" {
