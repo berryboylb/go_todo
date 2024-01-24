@@ -18,7 +18,8 @@ var SecretKey []byte
 func init() {
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatal("Error loading .env file")
+		fmt.Println(err)
+		// log.Fatal("Error loading .env file")
 	}
 
 	secretKey := os.Getenv("SECRET_KEY")

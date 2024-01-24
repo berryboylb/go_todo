@@ -4,6 +4,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"fmt"
 
 	"github.com/gorilla/mux" // An HTTP router
 	"github.com/joho/godotenv"
@@ -15,7 +16,8 @@ import (
 func main() {
 	err := godotenv.Load()
 	if err != nil {
-		log.Println("Error loading .env file")
+		fmt.Println(err)
+		// log.Println("Error loading .env file")
 	}
 
 	r := mux.NewRouter()
